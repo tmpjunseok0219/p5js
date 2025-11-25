@@ -3,29 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>p5.js 작품 모음</title>
+    <title>p5.js 프로젝트 작품 모음</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <header>
-        <h1>나의 p5.js 작품</h1>
-        <p>아래 링크를 클릭하여 다양한 p5.js 프로그램을 감상하세요.</p>
+        <h1>p5.js 과제 작품 모음</h1>
+        <p>각 프로젝트를 클릭하면 실제 p5.js 작품을 확인할 수 있습니다.</p>
     </header>
 
     <section id="projects">
-    
-        <div class="project">
-            <a href="sample1/index.html">
-                프로젝트 1: 이 프로그램은 마우스를 따라 움직이는 원을 그립니다.
+
+        <div class="project" data-group="left" data-order="1">
+            <a href="myp5js_01/index.html">
+                <h2>프로젝트 1: 도형을 이용한 추상화</h2>
+                <p>quad, triangle, arc, ellipse, point 등을 활용해 다양한 도형을 조합한 정적인 그래픽 아트 작품입니다.<br>
+                색조 배합과 레이어 구성이 특징이며, 전체적으로 추상적인 풍경을 표현합니다.</p>
             </a>
         </div>
-    
-        <div class="project">
-            <a href="sample2/index.html">
-                프로젝트 2: 이 프로그램은 다양한 색상으로 변화하는 배경을 만듭니다.
+
+        <div class="project" data-group="right" data-order="1">
+            <a href="myp5js_02/index.html">
+                <h2>프로젝트 2: 캐리커처</h2>
+                <p>ellipse, arc, line을 이용해 사람의 얼굴을 단순화하여 표현한 작품입니다.<br>
+                눈, 입, 모자 등을 기본적인 p5.js 도형 함수로 그립니다.</p>
+            </a>
+        </div>
+
+        <div class="project" data-group="left" data-order="2">
+            <a href="myp5js_03/index.html">
+                <h2>프로젝트 3: 인터랙티브 캐리커처</h2>
+                <p>마우스 방향에 따라 눈동자가 움직이고, 모자 색이 클릭할 때마다 랜덤으로 변경되는 인터랙티브 작품입니다.<br>
+                방향키로 표정을 바꾸거나 얼굴 위치를 이동할 수 있습니다.</p>
+            </a>
+        </div>
+
+        <div class="project" data-group="right" data-order="2">
+            <a href="myp5js_04/index.html">
+                <h2>프로젝트 4: 애니메이션이있는 추상화</h2>
+                <p>과제 1을 바탕으로, 색상 변화, 크기 변화, 회전 변환 등 시간 기반 애니메이션이 추가하였습니다.<br>
+                sin, millis, lerpColor 등 애니메이션을 포함합니다.</p>
             </a>
         </div>
 
     </section>
+
 </body>
 </html>
+
+

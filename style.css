@@ -1,0 +1,135 @@
+/* 기본 */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f6fa;
+    font-family: "Pretendard", "Segoe UI", sans-serif;
+}
+
+/* 헤더 */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #6d9cff, #90b8ff);
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* ================================ */
+/*        전체 2열 레이아웃          */
+/* ================================ */
+#projects {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px 100px;
+
+    position: relative;
+    overflow: visible;    /* 화살표가 영역 밖으로 나가도 보이게 */
+}
+
+/* 중앙 세로선 */
+#projects::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #d4d8e7;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* ================================ */
+/*              카드                */
+/* ================================ */
+.project {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    min-height: 240px;
+
+    position: relative;   /* 화살표들이 이 요소를 기준으로 자리 잡음 */
+    z-index: 2;           /* 중앙선보다 위 */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+    transition: 0.25s ease;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.16);
+}
+
+.project a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================================ */
+/*         그룹 색상 구분           */
+/* ================================ */
+.project:nth-child(1),
+.project:nth-child(3) {
+    background: #eef4ff;   /* 파란 그룹 */
+}
+
+.project:nth-child(2),
+.project:nth-child(4) {
+    background: #fff2e7;   /* 오렌지 그룹 */
+}
+
+/* ================================ */
+/*         1→3, 2→4 화살표          */
+/* ================================ */
+
+/* 첫 번째 카드들의 화살표만 표시 (1번, 2번) */
+.project:nth-child(1)::after,
+.project:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -30px;  /* 카드 아래쪽에 명확히 보이도록 */
+
+    width: 0;
+    height: 0;
+
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 20px solid;
+
+    transform: translateX(-50%);
+    z-index: 10;   /* 반드시 모든 요소 위 */
+}
+
+/* 1→3 화살표 (파란색) */
+.project:nth-child(1)::after {
+    border-top-color: #4a90e2;
+}
+
+/* 2→4 화살표 (오렌지색) */
+.project:nth-child(2)::after {
+    border-top-color: #ff8d72;
+}
+
+/* ================================ */
+/*          반응형 처리             */
+/* ================================ */
+@media (max-width: 768px) {
+    #projects {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    #projects::before {
+        display: none;
+    }
+}
